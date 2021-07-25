@@ -5,6 +5,8 @@
  */
 package BMI.Tool;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author keyla
@@ -40,6 +42,7 @@ public class bmi extends javax.swing.JFrame {
         bmiTF = new javax.swing.JTextField();
         clearBtn = new javax.swing.JButton();
         exitBtn = new javax.swing.JButton();
+        cekLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BMI Calculation Tool");
@@ -49,6 +52,10 @@ public class bmi extends javax.swing.JFrame {
 
         heightLabel.setForeground(new java.awt.Color(255, 255, 255));
         heightLabel.setText("Height");
+
+        feetTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        inchesTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         feetLabel.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         feetLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -63,6 +70,8 @@ public class bmi extends javax.swing.JFrame {
 
         weightLabel.setForeground(new java.awt.Color(255, 255, 255));
         weightLabel.setText("Weight");
+
+        weightTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         calculateBtn.setBackground(new java.awt.Color(255, 255, 0));
         calculateBtn.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
@@ -79,6 +88,7 @@ public class bmi extends javax.swing.JFrame {
         bmiLabel.setText("Your BMI");
 
         bmiTF.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        bmiTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         bmiTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bmiTFActionPerformed(evt);
@@ -104,6 +114,11 @@ public class bmi extends javax.swing.JFrame {
             }
         });
 
+        cekLabel.setBackground(new java.awt.Color(255, 255, 51));
+        cekLabel.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        cekLabel.setForeground(new java.awt.Color(255, 255, 0));
+        cekLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,14 +132,17 @@ public class bmi extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(weightLabel)
-                            .addComponent(bmiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(weightLabel)
+                                .addGap(31, 31, 31))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(bmiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(feetLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(inchesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(69, 69, 69))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -145,6 +163,10 @@ public class bmi extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(26, 26, 26))))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(cekLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,25 +183,22 @@ public class bmi extends javax.swing.JFrame {
                     .addComponent(inchesTF, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(weightLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bmiLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(weightLabel))
+                    .addComponent(calculateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(calculateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(bmiTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 37, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(weightTF, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(clearBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bmiTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bmiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cekLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,7 +209,7 @@ public class bmi extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -201,7 +220,31 @@ public class bmi extends javax.swing.JFrame {
     }//GEN-LAST:event_bmiTFActionPerformed
 
     private void calculateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateBtnActionPerformed
-        // TODO add your handling code here:
+        double feet, inches, kg, height, bmi;
+        try {
+            feet = Double.parseDouble(feetTF.getText());
+            inches = Double.parseDouble(inchesTF.getText());
+            kg = Double.parseDouble(weightTF.getText());
+            
+            height = (feet * 12) + inches;
+            height = (height * 2.5) / 100;
+            bmi = kg / (height * height);
+            
+            bmiTF.setText(new DecimalFormat("##.##").format(bmi));
+            
+            if (bmi < 18.5){
+                cekLabel.setText("Anda kekurangan berat badan");
+            } else if (bmi >= 18.5 && bmi <= 24.9){
+                cekLabel.setText("Berat badan anda normal");
+            } else if (bmi > 24.9){
+                cekLabel.setText("Anda kelebihan berat badan");
+            } else {
+                cekLabel.setText("Anda obesitas!");
+            }
+            
+        } catch (Exception e){
+            cekLabel.setText("Silahkan lengkapi data yang masih kosong!");
+        }
     }//GEN-LAST:event_calculateBtnActionPerformed
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
@@ -255,6 +298,7 @@ public class bmi extends javax.swing.JFrame {
     private javax.swing.JLabel bmiLabel;
     private javax.swing.JTextField bmiTF;
     private javax.swing.JButton calculateBtn;
+    private javax.swing.JLabel cekLabel;
     private javax.swing.JButton clearBtn;
     private javax.swing.JButton exitBtn;
     private javax.swing.JLabel feetLabel;

@@ -29,7 +29,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -55,17 +55,22 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="weightLabel" min="-2" max="-2" attributes="0"/>
-                              <Component id="bmiLabel" min="-2" pref="65" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="weightLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="bmiLabel" min="-2" pref="65" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                           <Component id="feetLabel" min="-2" pref="79" max="-2" attributes="0"/>
-                          <EmptySpace pref="97" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="inchesLabel" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       </Group>
@@ -96,6 +101,11 @@
                       </Group>
                   </Group>
               </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Component id="cekLabel" min="-2" pref="358" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -116,33 +126,27 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="weightTF" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="weightLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="bmiLabel" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="calculateBtn" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="exitBtn" max="32767" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                          <Component id="clearBtn" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                                          <Component id="bmiTF" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                      <Component id="calculateBtn" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="exitBtn" max="32767" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="clearBtn" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="bmiTF" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="bmiLabel" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="37" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="weightTF" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="cekLabel" pref="35" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -157,8 +161,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="feetTF">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="inchesTF">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="feetLabel">
           <Properties>
@@ -194,6 +204,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="weightTF">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="calculateBtn">
           <Properties>
@@ -226,6 +239,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="0"/>
             </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bmiTFActionPerformed"/>
@@ -261,6 +275,20 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitBtnActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="cekLabel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="33" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Arial Black" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
